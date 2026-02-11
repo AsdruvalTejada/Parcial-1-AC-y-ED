@@ -33,11 +33,6 @@ public class PrintJob {
         this.priority = priority;
     }
 
-
-    @Override
-    public String toString() {
-        return user + pages + " páginas, prioridad " + priority;
-    }
 }
 
 class Node {

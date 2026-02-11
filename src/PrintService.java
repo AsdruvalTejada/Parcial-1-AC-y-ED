@@ -2,7 +2,7 @@ public class PrintService {
     private final PrintQueue miCola;
 
     public PrintService() {
-        this.miCola = new PrintQueue(); // ¡Aquí es donde nace la cola!
+        this.miCola = new PrintQueue();
     }
 
     public void submitJob(String user, int pages, String priority) {
