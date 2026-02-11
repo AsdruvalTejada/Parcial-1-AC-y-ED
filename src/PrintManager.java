@@ -37,7 +37,7 @@ public class PrintManager {
 //Esta es enqueue: O(1).
 //Simplemente tenemos que mirar la letra y lo agregamos al final (tail) de una de las 3 listas
 //Esto sería O(1).
-//Luego verificamos si H está vacía, si no M, si no L, esas son 3 verificaciones constantes.
+//Luego verificamos si H está vacía, si no M, sino L, esas son 3 verificaciones constantes.
 
 //Opción B (Una lista enlazada ordenada):
 //Esta es enqueue: O(N).
@@ -49,3 +49,9 @@ public class PrintManager {
 // El total sería: O(N).
 // Opción B: Insertar N veces cuesta (1 + 2 + ... + N) = O(N^2). Procesar N veces cuesta O(N).
 // Su total es: O(N^2).
+
+//3. a. ¿Cuál es más eficiente?
+// La Opción A (Tres Colas) es mejor porque tiene complejidad lineal O(N) en total,
+// mientras que la lista ordenada se degrada a cuadrática O(N^2).
+// b. ¿Más simple de mantener? La Opción A. La lógica es más limpia que manejar "punteros" para insertar nodos
+// en medio de una lista enlazada.
