@@ -1,20 +1,36 @@
+import java.util.Scanner;
+
 public class PrintManager {
     public static void main(String[] args) {
-        PrintService impresiones = new PrintService();
+        Scanner scanner = new Scanner(System.in);
+        PrintService service = new PrintService();
 
-        impresiones.submitJob("Juan", 5, "M");
+        System.out.print("¿Cuántos documentos deseas imprimir? ");
+        int cant = 0;
 
-        impresiones.submitJob("Ana", 2, "H");
+        cant = scanner.nextInt();
+        scanner.nextLine();
 
-        impresiones.submitJob("Luis", 10, "L");
+        for (int i = 1; i <= cant; i++) {
 
-        impresiones.submitJob("Carlos", 3, "H");
+            System.out.print("Nombre del usuario: ");
+            String nombre = scanner.nextLine();
 
-        impresiones.submitJob("Maria", 4, "M");
+            int paginas = 0;
+            System.out.print("Número de páginas: ");
+            paginas = scanner.nextInt();
+            scanner.nextLine();
 
-        impresiones.processAll();
+            System.out.print("Prioridad (L - Baja, M - Media, H - Alta): ");
+            String prioridad = scanner.nextLine();
+            service.submitJob(nombre, paginas, prioridad);
+        }
+
+        service.processAll();
+        scanner.close();
     }
 }
 
 //Respuesta a preguntas teóricas:
+//1. Para cada opción (A y B), determine la complejidad asintótica de las operaciones:
 //

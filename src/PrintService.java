@@ -1,11 +1,14 @@
 public class PrintService {
-    private PrintQueue miCola;
+    private final PrintQueue miCola;
 
     public PrintService() {
         this.miCola = new PrintQueue(); // ¡Aquí es donde nace la cola!
     }
 
     public void submitJob(String user, int pages, String priority) {
+        if (priority == null || priority.isEmpty()){
+            priority = "M";
+        }
 
         PrintJob job = new PrintJob(user, pages, priority);
         miCola.enqueue(job);
